@@ -1,21 +1,5 @@
 ### 1- Replace Employee ID With The Unique Identifier
-<hr>
-Table: Employees                           
-
-+---------------+---------+
-| Column Name   | Type    |
-+---------------+---------+
-| id            | int     |
-| unique_id     | int     |
-+---------------+---------+
-Table: EmployeeUNI
-+---------------+---------+
-| Column Name   | Type    |
-+---------------+---------+
-| id            | int     |
-| name          | varchar |
-+---------------+---------+
-<br>
+<hr>                          
 #### Write an SQL query to show the unique ID of each user, If a user does not have a unique ID replace just show null
 
 ```MySQL
@@ -25,26 +9,7 @@ from Employees left join EmployeeUNI using(id)
 <br>
 ### 2- Product Sales Analysis I
 <hr>
-Table: Sales
 
-+-------------+-------+
-| Column Name | Type  |
-+-------------+-------+
-| sale_id     | int   |
-| product_id  | int   |
-| year        | int   |
-| quantity    | int   |
-| price       | int   |
-+-------------+-------+
-Table: Product
-
-+--------------+---------+
-| Column Name  | Type    |
-+--------------+---------+
-| product_id   | int     |
-| product_name | varchar |
-+--------------+---------+
-<br>
 #### Write an SQL query that reports the product_name, year, and price for each sale_id in the Sales table.
 
 ```MySQL
@@ -54,24 +19,7 @@ from Sales left join Product using(product_id)
 <br>
 ### 3- Customer Who Visited but Did Not Make Any Transactions
 <hr>
-Table: Visits
 
-+-------------+---------+
-| Column Name | Type    |
-+-------------+---------+
-| visit_id    | int     |
-| customer_id | int     |
-+-------------+---------+
-Table: Transactions
-
-+----------------+---------+
-| Column Name    | Type    |
-+----------------+---------+
-| transaction_id | int     |
-| visit_id       | int     |
-| amount         | int     |
-+----------------+---------+
-<br>
 #### Write a SQL query to find the IDs of the users who visited without making any transactions and the number of times they made these types of visits.
 
 ```MySQL
@@ -86,16 +34,7 @@ order by 2 desc
 <br>
 ### 4- Rising Temperature
 <hr>
-Table: Weather
 
-+---------------+---------+
-| Column Name   | Type    |
-+---------------+---------+
-| id            | int     |
-| recordDate    | date    |
-| temperature   | int     |
-+---------------+---------+
-<br>
 #### Write an SQL query to find all dates' Id with higher temperatures compared to its previous dates (yesterday).
 
 ```MySQL
@@ -107,17 +46,7 @@ where t1.recordDate  = DATE_ADD(t2.recordDate, INTERVAL 1 DAY) and t1.temperatur
 
 ### 5- Average Time of Process per Machine
 <hr>
-Table: Activity
 
-+----------------+---------+
-| Column Name    | Type    |
-+----------------+---------+
-| machine_id     | int     |
-| process_id     | int     |
-| activity_type  | enum    |
-| timestamp      | float   |
-+----------------+---------+
-<br>
 #### Write an SQL query to find the average time each machine takes to complete a process.
 
 ```MySQL
@@ -131,25 +60,7 @@ GROUP BY s.machine_id
 <br>
 ### 6- Employee Bonus
 <hr>
-Table: Employee
 
-+-------------+---------+
-| Column Name | Type    |
-+-------------+---------+
-| empId       | int     |
-| name        | varchar |
-| supervisor  | int     |
-| salary      | int     |
-+-------------+---------+
-Table: Bonus
-
-+-------------+------+
-| Column Name | Type |
-+-------------+------+
-| empId       | int  |
-| bonus       | int  |
-+-------------+------+
-<br>
 #### Write an SQL query to report the name and bonus amount of each employee with a bonus less than 1000.
 
 ```MySQL
@@ -162,22 +73,7 @@ where bonus < 1000 or bonus is null
 <br>
 ### 7- Students and Examinations
 <hr>
-Table: Students
 
-+---------------+---------+
-| Column Name   | Type    |
-+---------------+---------+
-| student_id    | int     |
-| student_name  | varchar |
-+---------------+---------+
-Table: Subjects
-
-+--------------+---------+
-| Column Name  | Type    |
-+--------------+---------+
-| subject_name | varchar |
-+--------------+---------+
-<br>
 #### Write an SQL query to find the number of times each student attended each exam.
 
 ```MySQL
@@ -192,17 +88,7 @@ ORDER BY student_id,subject_name;
 <br>
 ### 8- Managers with at Least 5 Direct Reports
 <hr>
-Table: Employee
 
-+-------------+---------+
-| Column Name | Type    |
-+-------------+---------+
-| id          | int     |
-| name        | varchar |
-| department  | varchar |
-| managerId   | int     |
-+-------------+---------+
-<br>
 #### Write an SQL query to report the managers with at least five direct reports.
 
 ```MySQL
@@ -217,24 +103,7 @@ having count(*) >= 5)
 <br>
 ### 9- Confirmation Rate
 <hr>
-Table: Signups
 
-+----------------+----------+
-| Column Name    | Type     |
-+----------------+----------+
-| user_id        | int      |
-| time_stamp     | datetime |
-+----------------+----------+
-Table: Confirmations
-
-+----------------+----------+
-| Column Name    | Type     |
-+----------------+----------+
-| user_id        | int      |
-| time_stamp     | datetime |
-| action         | ENUM     |
-+----------------+----------+
-<br>
 #### Write an SQL query to find the confirmation rate of each user.
 
 ```MySQL
