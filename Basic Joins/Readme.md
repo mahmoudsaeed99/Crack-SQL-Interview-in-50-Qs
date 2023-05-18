@@ -8,7 +8,8 @@ select unique_id , name
 from Employees left join EmployeeUNI using(id)
 ```
 <br>
-2- Product Sales Analysis I
+
+### 2- Product Sales Analysis I
 <hr>
 
 #### Write an SQL query that reports the product_name, year, and price for each sale_id in the Sales table.
@@ -18,6 +19,7 @@ select product_name , year , price
 from Sales left join Product using(product_id)
 ```
 <br>
+
 ### 3- Customer Who Visited but Did Not Make Any Transactions
 <hr>
 
@@ -33,6 +35,7 @@ group by 1
 order by 2 desc
 ```
 <br>
+
 ### 4- Rising Temperature
 <hr>
 
@@ -59,6 +62,7 @@ FROM Activity s JOIN Activity e ON
 GROUP BY s.machine_id
 ```
 <br>
+
 ### 6- Employee Bonus
 <hr>
 
@@ -72,6 +76,7 @@ on t1.empId = t2.empId
 where bonus < 1000 or bonus is null
 ```
 <br>
+
 ### 7- Students and Examinations
 <hr>
 
@@ -87,6 +92,7 @@ GROUP BY student.student_id,subject.subject_name
 ORDER BY student_id,subject_name;
 ```
 <br>
+
 ### 8- Managers with at Least 5 Direct Reports
 <hr>
 
@@ -102,6 +108,7 @@ group by managerId
 having count(*) >= 5)
 ```
 <br>
+
 ### 9- Confirmation Rate
 <hr>
 
