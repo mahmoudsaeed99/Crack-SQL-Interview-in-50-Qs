@@ -1,5 +1,6 @@
 ### 1- Replace Employee ID With The Unique Identifier
-<hr>                          
+<hr>     
+
 #### Write an SQL query to show the unique ID of each user, If a user does not have a unique ID replace just show null
 
 ```MySQL
@@ -7,7 +8,7 @@ select unique_id , name
 from Employees left join EmployeeUNI using(id)
 ```
 <br>
-### 2- Product Sales Analysis I
+2- Product Sales Analysis I
 <hr>
 
 #### Write an SQL query that reports the product_name, year, and price for each sale_id in the Sales table.
