@@ -43,7 +43,7 @@ from Users left join MovieRating using(user_id)
 group by user_id
 order by count(*) desc , name asc
 limit 1)
-UNION
+UNION all
 (select title as results
 from Movies left join MovieRating using(movie_id)
 where month(created_at) = 2
