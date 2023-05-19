@@ -1,3 +1,5 @@
+<h4>Support with star</h4>
+
 LeetCode Crack SQL Interview in 50 Qs badge
 <br>
 <img src="https://assets.leetcode.com/static_assets/others/Top_SQL_50.png">
