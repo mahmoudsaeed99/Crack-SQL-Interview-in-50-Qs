@@ -87,8 +87,9 @@ having sum(unit) >= 100
 The domain is '@leetcode.com'.
 
 ```MySQL
-select * from Users 
-where regexp_like(mail, '^[A-Za-z]+[A-Za-z0-9\_\.\-]*@leetcode.com')
+SELECT *
+FROM Users
+WHERE mail REGEXP '^[a-zA-Z][a-zA-Z0-9._-]*@leetcode\\.com'
 ```
 <br>
 
